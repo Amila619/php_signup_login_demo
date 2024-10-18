@@ -9,7 +9,7 @@ if (! filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
     die("Valid email address is required");
 }
 
-if (strlen($_POST["password"]) < 8){
+if (strlen($_POST["password"]) < 8) {
     die("Passwords must contain atleast 8 characters");
 }
 
@@ -19,13 +19,13 @@ if (! preg_match("/[a-z]/i", $_POST["password"])) {
 
 if (! preg_match("/[A-Z]/i", $_POST["password"])) {
     die("Passwords must contain atleast one capital letter");
-} 
+}
 
 if (! preg_match("/[0-9]/i", $_POST["password"])) {
     die("Passwords must contain atleast one number");
 }
 
-if ($_POST["password"] !== $_POST["password_confirmation"]){
+if ($_POST["password"] !== $_POST["password_confirmation"]) {
     die("passwords don't match ");
 }
 
@@ -35,5 +35,21 @@ $password_hash = password_hash($_POST["password"], PASSWORD_BCRYPT);
 
 $mysqli = require __DIR__ . "/database.php";
 
-print_r($_POST);
-var_dump($password_hash);
+$sql = "INSERT INTO user (name, email, password_hash) VALUES (?, ?, ?)";
+
+$stmt = $mysqli->stmt_init();
+
+if (! $stmt->prepare($sql)) {
+    die("SQL error: " . $mysqli->error);
+}
+
+$stmt->bind_param(
+    "sss",
+    $_POST["name"],
+    $_POST["email"],
+    $password_hash
+);
+
+$stmt->execute();
+
+echo "Sign Up successfull";
