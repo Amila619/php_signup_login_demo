@@ -7,23 +7,23 @@
     <title>Sign Up</title>
 </head>
 <body class="h-screen flex justify-center items-center">
-    <form action="" class="grid gap-2 shadow-lg max-w-80 w-full p-6 rounded-md bg-slate-50">
+    <form action="process-signup.php" method="post" class="grid gap-2 shadow-lg max-w-80 w-full p-6 rounded-md bg-slate-50" novalidate>
       <h1 class="text-4xl text-center uppercase">Sign Up</h1>
         <div class="flex flex-col space-y-2">
             <label for="name" class="text-md text-slate-900 font-semibold">Name</label>
-            <input type="text" name="" id="name" class="bg-gray-300 p-2 rounded-sm">
+            <input type="text" name="name" id="name" class="bg-gray-300 p-2 rounded-sm">
         </div>
         <div class="flex flex-col space-y-2">
             <label for="email" class="text-md text-slate-900 font-semibold">Email</label>
-            <input type="email" name="" id="email" class="bg-gray-300 p-2 rounded-sm">
+            <input type="email" name="email" id="email" class="bg-gray-300 p-2 rounded-sm">
         </div>
         <div class="flex flex-col space-y-2">
             <label for="password" class="text-md text-slate-900 font-semibold">Password</label>
-            <input type="password" name="" id="password" class="bg-gray-300 p-2 rounded-sm">
+            <input type="password" name="password" id="password" class="bg-gray-300 p-2 rounded-sm">
         </div>
         <div class="flex flex-col space-y-2">
             <label for="password_confirmation" class="text-md text-slate-900 font-semibold">Repeat Password</label>
-            <input type="password" name="" id="password_confirmation" class="bg-gray-300 p-2 rounded-sm">
+            <input type="password" name="password_confirmation" id="password_confirmation" class="bg-gray-300 p-2 rounded-sm">
         </div>
         <input type="submit" value="Sign Up" class="bg-gray-300 border-solid border-2 border-slate-500 text-slate-900 font-bold p-2 rounded-md mt-4 cursor-pointer">
     </form>
