@@ -30,7 +30,7 @@ if(isset($_SESSION["user_id"])){
         <h1 class="text-4xl uppercase">Home</h1>
 
         <?php if (isset($user)): ?>
-            <p>Hello <?= htmlspecialchars($user["name"]) ?> are logged in.</p>
+            <p>Hello <?= htmlspecialchars($user["name"]) ?> you are logged in.</p>
             <p><a href="logout.php">Log out</a></p>
         <?php else: ?>
             <p><a href="login.php">Log In</a> or <a href="signup.html">Sign Up</a></p>

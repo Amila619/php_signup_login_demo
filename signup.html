@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/output.css">
     <title>Sign Up</title>
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js" defer></script>
+    <script src="js/validation.js" defer></script>
 </head>
 <body class="h-screen flex justify-center items-center">
-    <form action="process-signup.php" method="post" class="grid gap-2 shadow-lg max-w-80 w-full p-6 rounded-md bg-slate-50" novalidate>
+    <form id="signup" action="process-signup.php" method="post" class="grid gap-2 shadow-lg max-w-80 w-full p-6 rounded-md bg-slate-50" novalidate>
       <h1 class="text-4xl text-center uppercase">Sign Up</h1>
         <div class="flex flex-col space-y-2">
             <label for="name" class="text-md text-slate-900 font-semibold">Name</label>
